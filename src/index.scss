@@ -1,3 +1,72 @@
 html, body {
   background: #ffffff;
+
+  #container {
+
+    .container-new {
+
+      &__item {
+      }
+
+      &__button {
+      }
+
+      &__close {
+      }
+    }
+
+    .container-main {
+
+      &__container-player {
+      }
+
+      .container-info {
+
+        &__photo {
+        }
+
+        &__name {
+
+        }
+
+        &__description {
+
+          .description__item {
+
+            &__title {
+            }
+
+            &__value {
+
+              .activity {
+              }
+            }
+          }
+        }
+
+        &__description-text {
+        }
+      }
+    }
+
+    .container-footer {
+
+      &__title {
+
+      }
+
+      &__container-videos {
+
+        .container-video {
+
+          &__player {
+
+          }
+
+          &__title {
+          }
+        }
+      }
+    }
+  }
 }
