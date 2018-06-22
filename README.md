@@ -1,7 +1,7 @@
-#Please make the HTML markup for given task.psd file 
+# Please make the HTML markup for given task.psd file 
 
 
-##Criteria of satisfaction (Please read all the points before you begin):
+## Criteria of satisfaction (Please read all the points before you begin):
 
 1. Implement the HTML layout as closer to the given PSD as you can (fonts, sizes, menus etc.). Pixel-perfect is desirable but not necessary. 
 
@@ -18,7 +18,7 @@ If you feel that default icons are not ok - use 3rd party icon font.
 
 7. *Optional. Again, implementation of this will be considered as a plus. In attach you can see data.json file. It contains all the necessary data to render this page and have some dynamic (videos should be switchable. Clicking on video thumbnail you should re-init the player and download section with the new content). You can use any solution you like (e.g. React+ES6, Angular+TypeScript or any other combination except jQuery. Try to keep it simple).
 
-##Approximate time for implementation:
+## Approximate time for implementation:
 ### ~ 3-4 hours for points 1-5
 ### ~ 6 hours for points 1-6
 ### ~ 8 hours for points 1-7
