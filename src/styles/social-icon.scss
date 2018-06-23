@@ -1,14 +1,5 @@
-@import '~svg-spritemap-webpack-plugin/_sprites';
-
-@mixin icon($width, $left) {
-  content: '';
-  display: block;
-  height: 14px;
-  width: $width;
-  position: relative;
-  top: 8px;
-  left: $left;
-}
+@import '../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '_mixins';
 
 .social-icon {
   display: block;

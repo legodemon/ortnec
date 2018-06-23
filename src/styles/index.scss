@@ -1,34 +1,8 @@
-@import '~svg-spritemap-webpack-plugin/_sprites';
+@import '../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '_vars';
+@import '_mixins';
 @import 'social-icon';
-
-$width: 940px;
-$color: #465993;
-$Arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
-$Ubuntu: 'Ubuntu', sans-serif;
-$borderRadius: 5px;
-
-@mixin flex-box($direction, $justify, $align) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-}
-
-@mixin ubuntu-font($size, $font-family: $Ubuntu, $color: $color) {
-  font-family: $font-family;
-  font-size: $size;
-  font-weight: bold;
-  font-style: italic;
-  text-transform: uppercase;
-  color: $color;
-}
-
-@mixin arial-font($size, $font-family: $Arial, $color: $color) {
-  font-family: $font-family;
-  font-size: $size;
-  font-weight: bold;
-  color: $color;
-}
+@import 'download';
 
 html, body {
   box-sizing: border-box;
@@ -44,7 +18,7 @@ html, body {
       @include flex-box(row, space-between, center);
 
       width: $width - 20px;
-      background-color: #f2f5ff;
+      background-color: $lowColor;
 
       padding: 5px 10px;
 
@@ -61,7 +35,7 @@ html, body {
       }
 
       &__button {
-        background-color: #dae3ff;
+        background-color: $highColor;
         padding: 7px 12px;
         border-radius: $borderRadius;
 
@@ -84,11 +58,19 @@ html, body {
 
       width: $width;
 
-      &__container-player {
-        width: 700px;
-        height: 525px;
-        border-radius: $borderRadius;
-        background-color: black;
+      .container-player {
+        @include flex-box(column, space-between, center);
+
+        &__player {
+          width: 700px;
+          height: 525px;
+          border-radius: $borderRadius;
+          background-color: black;
+        }
+
+        &__controls {
+
+        }
       }
 
       .container-info {

@@ -1,0 +1,32 @@
+@mixin flex-box($direction, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin ubuntu-font($size, $font-family: $Ubuntu, $color: $color) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin arial-font($size, $font-family: $Arial, $color: $color) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: bold;
+  color: $color;
+}
+
+@mixin icon($width, $left) {
+  content: '';
+  display: block;
+  height: 14px;
+  width: $width;
+  position: relative;
+  top: 8px;
+  left: $left;
+}

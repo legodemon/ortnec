@@ -12,7 +12,25 @@ export class App extends React.Component {
       </div>,
 
       <div key={'main'} className="container-main">
-        <div className="container-main__container-player">
+        <div className="container-player">
+          <div className="container-player__player"/>
+          <div className="container-player__controls">
+
+            <nav className="download">
+              <ul>
+                <li>
+                  <a href="#">Download</a>
+                  <ul>
+                    <li><a className="item" href="#"><div className="atr">LQ</div><div className="size">750 Mb</div></a></li>
+                    <li><a className="item" href="#"><div className="atr">MQ</div><div className="size">2309 Mb</div></a></li>
+                    <li><a className="item" href="#"><div className="atr">HQ</div><div className="size">4598 Mb</div></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+
+          </div>
         </div>
         <div className="container-info">
           <div className="container-info__photo"/>
