@@ -45,11 +45,29 @@ export class App extends React.Component {
       </div>,
 
       <div key={'footer'} className="container-footer">
-        <div className="container-footer__title">Sandra Star’s video</div>
+
+        <div className="container-title">
+          <div className="container-title__title">
+            Sandra Star’s video
+          </div>
+          <div className="container-title__border"/>
+        </div>
+
         <div className="container-footer__container-videos">
           <div className="container-video">
             <div className="container-video__player"/>
-            <div className="container-video__title">Title</div>
+            <div className="container-video__title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
+          </div>
+          <div className="container-video">
+            <div className="container-video__player"/>
+            <div className="container-video__title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
+          </div>
+          <div className="container-video">
+            <div className="container-video__player"/>
+            <div className="container-video__title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
           </div>
         </div>
       </div>,
