@@ -56,16 +56,25 @@ export class App extends React.Component {
         <div className="container-footer__container-videos">
           <div className="container-video">
             <div className="container-video__player"/>
+            <div className="social-icon tumblr"/>
             <div className="container-video__title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
           </div>
           <div className="container-video">
             <div className="container-video__player"/>
+            <div className="social-icon instagram"/>
             <div className="container-video__title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
           </div>
           <div className="container-video">
             <div className="container-video__player"/>
+            <div className="social-icon facebook"/>
+            <div className="container-video__title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
+          </div>
+          <div className="container-video">
+            <div className="container-video__player"/>
+            <div className="social-icon tumblr"/>
             <div className="container-video__title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed egestas mi. Cras ornare neque sed eros malesuada, ac pretium risus lacinia.</div>
           </div>

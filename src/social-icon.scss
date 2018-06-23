@@ -1,0 +1,50 @@
+
+@import '~svg-spritemap-webpack-plugin/_sprites';
+
+.social-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &.tumblr {
+    &:after {
+      content: '';
+      display: block;
+      height: 14px;
+      width: 7px;
+      position: relative;
+      top: 8px;
+      left: 11px;
+      @include sprite('tumblr');
+    }
+  }
+
+  &.facebook {
+    &:after {
+      content: '';
+      display: block;
+      height: 14px;
+      width: 7px;
+      position: relative;
+      top: 8px;
+      left: 11px;
+      @include sprite('facebook');
+    }
+  }
+
+  &.instagram {
+    &:after {
+      content: '';
+      display: block;
+      height: 14px;
+      width: 14px;
+      position: relative;
+      top: 8px;
+      left: 8px;
+      @include sprite('instagram');
+    }
+  }
+}

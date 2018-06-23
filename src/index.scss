@@ -1,4 +1,4 @@
-//@import '~svg-spritemap-webpack-plugin/sprite.scss';
+@import 'social-icon';
 
 $width: 940px;
 $color: #465993;
@@ -204,6 +204,8 @@ html, body {
         width: 100%;
 
         .container-video {
+          position: relative;
+
           @include flex-box(column, space-between, center);
 
           width: 220px;
@@ -225,6 +227,12 @@ html, body {
 
             margin-top: 14px;
           }
+        }
+
+        .social-icon {
+          position: absolute;
+          bottom: 50px;
+          left: 20px;
         }
       }
     }
