@@ -1,5 +1,14 @@
-
 @import '~svg-spritemap-webpack-plugin/_sprites';
+
+@mixin icon($width, $left) {
+  content: '';
+  display: block;
+  height: 14px;
+  width: $width;
+  position: relative;
+  top: 8px;
+  left: $left;
+}
 
 .social-icon {
   display: block;
@@ -11,39 +20,21 @@
 
   &.tumblr {
     &:after {
-      content: '';
-      display: block;
-      height: 14px;
-      width: 7px;
-      position: relative;
-      top: 8px;
-      left: 11px;
+      @include icon(7px, 11px);
       @include sprite('tumblr');
     }
   }
 
   &.facebook {
     &:after {
-      content: '';
-      display: block;
-      height: 14px;
-      width: 7px;
-      position: relative;
-      top: 8px;
-      left: 11px;
+      @include icon(7px, 11px);
       @include sprite('facebook');
     }
   }
 
   &.instagram {
     &:after {
-      content: '';
-      display: block;
-      height: 14px;
-      width: 14px;
-      position: relative;
-      top: 8px;
-      left: 8px;
+      @include icon(14px, 8px);
       @include sprite('instagram');
     }
   }
