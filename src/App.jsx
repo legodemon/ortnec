@@ -15,6 +15,12 @@ export class App extends React.Component {
         <div className="container-player">
           <div className="container-player__player"/>
           <div className="container-player__controls">
+            <div className="wrapper"/>
+
+            <div className="favorites">
+              <div className="favorites__icon"/>
+              <div className="favorites__text">Add to favorites</div>
+            </div>
 
             <nav className="download">
               <ul>
@@ -28,8 +34,6 @@ export class App extends React.Component {
                 </li>
               </ul>
             </nav>
-
-
           </div>
         </div>
         <div className="container-info">

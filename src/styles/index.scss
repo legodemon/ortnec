@@ -3,6 +3,7 @@
 @import '_mixins';
 @import 'social-icon';
 @import 'download';
+@import 'favorites';
 
 html, body {
   box-sizing: border-box;
@@ -69,6 +70,15 @@ html, body {
         }
 
         &__controls {
+          @include flex-box(row, space-between, center);
+
+          width: 100%;
+
+          padding-top: 20px;
+
+          .wrapper {
+            width: 390px;
+          }
 
         }
       }

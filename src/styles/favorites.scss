@@ -1,0 +1,21 @@
+@import '../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '_vars';
+@import '_mixins';
+
+.favorites {
+  @include flex-box(row, space-between, center);
+
+  width: 140px;
+  cursor: pointer;
+
+  &__icon {
+    width: 21px;
+    height: 20px;
+    display: block;
+    @include sprite('heart')
+  }
+
+  &__text {
+    @include arial-font(14px)
+  }
+}
