@@ -1,14 +1,67 @@
+$width: 940px;
+$color: #465993;
+$Arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$Ubuntu: 'Ubuntu', sans-serif;
+$borderRadius: 5px;
+
+@mixin flex-box($direction, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin ubuntu-font($size, $font-family: $Ubuntu, $color: $color) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin arial-font($size, $font-family: $Arial, $color: $color) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: bold;
+  color: $color;
+}
+
 html, body {
+  box-sizing: border-box;
   background: #ffffff;
 
   #container {
+    width: 1020px;
+
+    @include flex-box(column, center, center);
 
     .container-new {
+      @include flex-box(row, space-between, center);
+
+      width: $width - 20px;
+      background-color: #f2f5ff;
+
+      padding: 5px 10px;
+
+      border-radius: $borderRadius;
+
+      .wrapper {
+        @include flex-box(row, center, center);
+      }
 
       &__item {
+        @include arial-font(14px);
+
+        margin-right: 15px;
       }
 
       &__button {
+        background-color: #dae3ff;
+        padding: 7px 12px;
+        border-radius: $borderRadius;
+
+        @include ubuntu-font(14px);
       }
 
       &__close {
@@ -16,40 +69,102 @@ html, body {
     }
 
     .container-main {
+      @include flex-box(row, space-between, flex-start);
+
+      padding-top: 23px;
+
+      width: $width;
 
       &__container-player {
+        width: 700px;
+        height: 525px;
+        background-color: black;
       }
 
       .container-info {
+        @include flex-box(column, space-between, center);
+
+        width: 220px;
+
+        border: 1px solid #d0d8ef;
+        border-radius: $borderRadius;
+
+        padding-top: 20px;
+        padding-bottom: 35px;
 
         &__photo {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+
+          background: #cac8cb;
         }
 
         &__name {
+          @include ubuntu-font(24px);
 
+          padding: 20px 0;
         }
 
         &__description {
+          @include flex-box(column, space-between, center);
 
           .description__item {
+            @include flex-box(row, center, center);
+            flex-wrap: wrap;
+
+            width: 170px;
+
+            margin-bottom: 10px;
 
             &__title {
+              @include arial-font(14px);
+              margin-right: 2px;
+
+              &:after {
+                content: ':';
+                font-weight: normal;
+              }
             }
 
             &__value {
+              @include arial-font(14px);
+              font-weight: normal;
+              margin-right: 3px;
 
-              .activity {
+              &:not(:last-child):after {
+                content: ',';
+                font-weight: normal;
+              }
+
+              &.link {
+                text-decoration: underline;
               }
             }
           }
         }
 
+        &__delimiter {
+          width: 180px;
+          height: 1px;
+          background: #d0d8ef;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+
         &__description-text {
+          @include arial-font(14px);
+          font-weight: normal;
+          color: #334069;
+
+          width: 180px;
+          text-align: center;
         }
       }
     }
 
     .container-footer {
+      width: $width;
 
       &__title {
 
