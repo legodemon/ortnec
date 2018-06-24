@@ -29,8 +29,8 @@ class App extends React.Component {
     return Object.keys(this.props.store).length
       ? [
         <Header key={'header'} data={newProfiles} closeFn={closeHeader}/>,
-        <Main video={videos.pop()} modelInfo={modelInfo} key={'main'}/>,
-        <Footer videos={videos.slice(2)} key={'footer'}/>,
+        <Main key={'main'} video={videos.slice(0,1).pop()} modelInfo={modelInfo}/>,
+        <Footer key={'footer'} videos={videos.slice(1)} name={modelInfo.name}/>,
       ] : []
   }
 }

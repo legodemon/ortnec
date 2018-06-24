@@ -1,24 +1,30 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import './Footer.scss'
 import {Preview} from '../../components/Preview/Preview'
+import './Footer.scss'
 
 export class Footer extends React.Component {
-  render() {
-    return <div key={'footer'} className="footer">
+  static propTypes = {
+    videos: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired
+  }
 
-      <div className="footer__title">
-        <div className="footer__title__value">
-          Sandra Star’s video
+  render() {
+    const {videos, name} = this.props
+
+    return <div key={'footer'} className='footer'>
+
+      <div className='footer__title'>
+        <div className='footer__title__value'>
+          {`${name}’s video`}
         </div>
-        <div className="footer__title__border"/>
+        <div className='footer__title__border'/>
       </div>
 
-      <div className="footer__previews">
-        <Preview/>
-        <Preview/>
-        <Preview/>
-        <Preview/>
+      <div className='footer__previews'>
+        {videos.map(({title, socialLink, id}) => <Preview
+          key={`${id}-preview`} id={id} title={title} socialLink={socialLink}/>)}
       </div>
     </div>
   }

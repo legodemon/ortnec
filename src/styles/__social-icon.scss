@@ -9,7 +9,7 @@
   border-radius: 50%;
   cursor: pointer;
 
-  &.tumblr {
+  &.twitter {
     &:after {
       @include icon(7px, 11px);
       @include sprite('tumblr');
