@@ -7,6 +7,4 @@ import configureStore from './store/configureStore'
 
 import './styles/index.scss'
 
-const store = configureStore()
-
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('container'))
+ReactDOM.render(<Provider store={configureStore()}><App/></Provider>, document.getElementById('container'))

@@ -1,19 +1,17 @@
-/**
- * COMMON WEBPACK CONFIGURATION
- */
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 
-const path = require('path');
-const webpack = require('webpack');
-
-process.noDeprecation = true;
-
-module.exports = (options) => ({
-  mode: options.mode,
-  entry: options.entry,
-  output: Object.assign({ // Compile into js/build.js
-    path: path.resolve(process.cwd(), 'build'),
-    publicPath: '/',
-  }, options.output), // Merge with env dependent settings
+module.exports = {
+  entry: {
+    main: path.join(process.cwd(), 'src/index.js')
+  },
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: 'main.js'
+  },
   module: {
     rules: [
       {
@@ -21,14 +19,16 @@ module.exports = (options) => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: options.babelQuery,
         },
       },
       {
         // Preprocess our own .scss files
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         // Preprocess 3rd party .css files located in node_modules
@@ -85,22 +85,20 @@ module.exports = (options) => ({
       },
     ],
   },
-  plugins: options.plugins.concat([
-    new webpack.ProvidePlugin({
-      // make fetch available
-      fetch: 'exports-loader?self.fetch!whatwg-fetch'
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'style.css'
     }),
-
-    // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
-    // inside your code for any environment checks; UglifyJS will automatically
-    // drop any unreachable code.
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      },
-    })
-
-  ]),
+    new HtmlWebPackPlugin({
+      template: './public/index.html',
+      filename: './index.html'
+    }),
+    new SVGSpritemapPlugin({
+      src: path.join(process.cwd(), 'src/**/*.svg'),
+      styles: '~_sprites.scss'
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: [
@@ -115,9 +113,6 @@ module.exports = (options) => ({
       'main'
     ]
   },
-  devtool: options.devtool,
-  target: 'web', // Make web variables accessible to webpack, e.g. window
-  performance: options.performance || {},
   optimization: {
     namedModules: true,
     splitChunks: {
@@ -125,4 +120,4 @@ module.exports = (options) => ({
       minChunks: 2
     }
   }
-});
+}
