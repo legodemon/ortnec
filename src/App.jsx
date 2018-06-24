@@ -10,23 +10,31 @@ import {Footer} from './containers/Footer/Footer'
 import * as actions from './actions'
 
 class App extends React.Component {
+  static propTypes = {
+    actions: PropTypes.shape({
+      getData: PropTypes.func.isRequired,
+      closeHeader: PropTypes.func.isRequired,
+    }),
+    store: PropTypes.object
+  }
+
   componentDidMount() {
     this.props.actions.getData()
   }
 
   render() {
-    return [
-      <Header key={'header'}/>,
-      <Main key={'main'}/>,
-      <Footer key={'footer'}/>,
-    ]
-  }
-}
+    const {modelInfo, newProfiles, videos} = this.props.store
+    const {closeHeader} = this.props.actions
 
-App.propTypes = {
-  actions: PropTypes.shape({
-    getData: PropTypes.func.isRequired
-  }),
+    console.log(newProfiles)
+
+    return Object.keys(this.props.store).length
+      ? [
+        <Header key={'header'} data={newProfiles} closeFn={closeHeader}/>,
+        <Main key={'main'}/>,
+        <Footer key={'footer'}/>,
+      ] : []
+  }
 }
 
 export default connect(state => ({store: state}), dispatch => ({actions: bindActionCreators(actions, dispatch)}))(App)

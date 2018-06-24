@@ -9,9 +9,16 @@
 }
 
 .check {
+  cursor: pointer;
+
   background-color: $highColor;
   padding: 7px 12px;
   border-radius: $borderRadius;
 
   @include ubuntu-font(14px);
+
+  transition: background-color 50ms ease-in;
+  &:hover {
+    background-color: $lowColor;
+  }
 }

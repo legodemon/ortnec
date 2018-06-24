@@ -1,7 +1,7 @@
 import * as ActionsConst from '../const/const'
 
 export const getData = () => dispatch => {
-  dispatch({type: ActionsConst.GET_DATA_REQUEST,})
+  dispatch({type: ActionsConst.GET_DATA_REQUEST})
 
   fetch('/public/data.json')
     .then(response => response.json())
@@ -14,3 +14,5 @@ export const getData = () => dispatch => {
       payload: error
     }))
 }
+
+export const closeHeader = () => dispatch => dispatch({type: ActionsConst.CLOSE_HEADR})

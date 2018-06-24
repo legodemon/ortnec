@@ -14,4 +14,8 @@ html, body {
     @include flex-box(column, center, center);
 
   }
+
+  a {
+    text-decoration: none;
+  }
 }

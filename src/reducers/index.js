@@ -2,11 +2,17 @@ import * as ActionsConst from '../const/const'
 
 const initialState = {}
 
-export default function state(state = initialState, action) {
-  switch (action.type) {
+export default function state(state = initialState, {type, payload}) {
+  switch (type) {
   case ActionsConst.GET_DATA_SUCCESS:
-
-    return state
+    payload.newProfiles.visible = true
+    return payload
+  case ActionsConst.GET_DATA_ERROR:
+    return {error: payload}
+  case ActionsConst.CLOSE_HEADR:
+    console.log('close')
+    state.newProfiles.visible = false
+    return {...state}
   default:
     return state
   }
