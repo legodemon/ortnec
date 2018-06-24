@@ -1,0 +1,83 @@
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.info {
+  @include flex-box(column, space-between, center);
+
+  width: 220px;
+
+  border: 1px solid #d0d8ef;
+  border-radius: $borderRadius;
+
+  padding-top: 20px;
+  padding-bottom: 35px;
+
+  .photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    background: #cac8cb;
+  }
+
+  .name {
+    @include ubuntu-font(24px);
+
+    padding: 20px 0;
+  }
+
+  .description {
+    @include flex-box(column, space-between, center);
+
+    &__item {
+      @include flex-box(row, center, center);
+      flex-wrap: wrap;
+
+      width: 170px;
+
+      margin-bottom: 10px;
+
+      &__title {
+        @include arial-font(14px);
+        margin-right: 2px;
+
+        &:after {
+          content: ':';
+          font-weight: normal;
+        }
+      }
+
+      &__value {
+        @include arial-font(14px);
+        font-weight: normal;
+        margin-right: 3px;
+
+        &:not(:last-child):after {
+          content: ',';
+          font-weight: normal;
+        }
+
+        &.link {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .delimiter {
+    width: 180px;
+    height: 1px;
+    background: #d0d8ef;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .text {
+    @include arial-font(14px);
+    font-weight: normal;
+    color: #334069;
+
+    width: 180px;
+    text-align: center;
+  }
+}

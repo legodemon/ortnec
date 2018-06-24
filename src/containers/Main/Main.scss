@@ -1,0 +1,11 @@
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.main {
+  @include flex-box(row, space-between, flex-start);
+
+  padding-top: 23px;
+
+  width: $width;
+
+}

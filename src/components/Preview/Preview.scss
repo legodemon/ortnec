@@ -1,0 +1,35 @@
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+@import '../../styles/_social-icon';
+
+.preview {
+  position: relative;
+
+  @include flex-box(column, space-between, center);
+
+  width: 220px;
+
+  &__image {
+    width: 220px;
+    height: 165px;
+    border-radius: $borderRadius;
+    background-color: black;
+  }
+
+  .social-icon {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+  }
+
+  &__title {
+    @include arial-font(14px);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    margin-top: 14px;
+  }
+}

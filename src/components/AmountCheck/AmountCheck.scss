@@ -1,0 +1,17 @@
+@import '../../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.amount {
+  @include arial-font(14px);
+
+  margin-right: 15px;
+}
+
+.check {
+  background-color: $highColor;
+  padding: 7px 12px;
+  border-radius: $borderRadius;
+
+  @include ubuntu-font(14px);
+}

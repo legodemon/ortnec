@@ -1,0 +1,43 @@
+@import '../../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+@import '../../styles/_social-icon';
+
+.footer {
+  @include flex-box(column, center, center);
+
+  width: $width;
+  padding-top: 52px;
+
+  &__title {
+    @include flex-box(row, space-between, center);
+
+    width: 100%;
+
+    &__value {
+      @include ubuntu-font(24px);
+      font-family: "Ubuntu", sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+      color: $color;
+      white-space: nowrap;
+      padding-right: 22px;
+    }
+
+    &__border {
+      width: 100%;
+      height: 1px;
+      background: #d0d8ef;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__previews {
+    @include flex-box(row, space-between, center);
+
+    width: 100%;
+  }
+}

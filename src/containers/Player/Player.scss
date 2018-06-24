@@ -1,0 +1,27 @@
+@import '../../../node_modules/svg-spritemap-webpack-plugin/sprites';
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.player {
+  @include flex-box(column, space-between, center);
+
+  &-component {
+    width: 700px;
+    height: 525px;
+    border-radius: $borderRadius;
+    background-color: black;
+  }
+
+  &-controls {
+    @include flex-box(row, space-between, center);
+
+    width: 100%;
+
+    padding-top: 20px;
+
+    .wrapper {
+      width: 390px;
+    }
+
+  }
+}
