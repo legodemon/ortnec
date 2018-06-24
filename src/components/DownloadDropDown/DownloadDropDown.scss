@@ -90,7 +90,7 @@
     @include flex-box(row, flex-start, center);
 
     .atr {
-      width: 39px;
+      width: 70px;
     }
 
     .size {
@@ -119,7 +119,8 @@
       }
 
       li:last-child {
-        border-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
       }
 
       a {

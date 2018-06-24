@@ -1,32 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './DownloadDropDown.scss'
 
 export class DownloadDropDown extends React.Component {
+  static propTypes = {
+    links: PropTypes.array.isRequired
+  }
+
   render() {
-    return <nav className="download">
+    const links = this.props.links
+
+    return <nav className='download'>
       <ul>
         <li>
-          <a href="#">Download</a>
+          <a href='#'>Download</a>
           <ul>
-            <li>
-              <a className="item" href="#">
-                <div className="atr">LQ</div>
-                <div className="size">750 Mb</div>
-              </a>
-            </li>
-            <li>
-              <a className="item" href="#">
-                <div className="atr">MQ</div>
-                <div className="size">2309 Mb</div>
-              </a>
-            </li>
-            <li>
-              <a className="item" href="#">
-                <div className="atr">HQ</div>
-                <div className="size">4598 Mb</div>
-              </a>
-            </li>
+            {
+              links.map(({fileSize, title, url}) => {
+                return <li key={`${url}-download`}>
+                  <a className='item' target={'_blank'} href={url}>
+                    <div className='atr'>{title}</div>
+                    <div className='size'>{fileSize}</div>
+                  </a>
+                </li>
+              })
+            }
           </ul>
         </li>
       </ul>

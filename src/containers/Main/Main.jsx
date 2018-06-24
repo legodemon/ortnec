@@ -6,14 +6,15 @@ import './Main.scss'
 
 export class Main extends React.Component {
   static propTypes = {
-    modelInfo: PropTypes.object.isRequired
+    modelInfo: PropTypes.object.isRequired,
+    video: PropTypes.object.isRequired
   }
 
   render() {
-    const {modelInfo} = this.props
+    const {modelInfo, video} = this.props
 
     return <div className='main'>
-      <Player/>
+      <Player video={video}/>
       <ModelInfo data={modelInfo}/>
     </div>
   }
