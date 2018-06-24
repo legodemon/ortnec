@@ -26,12 +26,10 @@ class App extends React.Component {
     const {modelInfo, newProfiles, videos} = this.props.store
     const {closeHeader} = this.props.actions
 
-    console.log(newProfiles)
-
     return Object.keys(this.props.store).length
       ? [
         <Header key={'header'} data={newProfiles} closeFn={closeHeader}/>,
-        <Main key={'main'}/>,
+        <Main modelInfo={modelInfo} key={'main'}/>,
         <Footer key={'footer'}/>,
       ] : []
   }

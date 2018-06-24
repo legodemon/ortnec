@@ -14,8 +14,11 @@
 
   opacity: 1;
 
+  transition: opacity, 500ms, easy-in;
+
   &.hidden {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .wrapper {

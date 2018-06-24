@@ -10,7 +10,6 @@ export default function state(state = initialState, {type, payload}) {
   case ActionsConst.GET_DATA_ERROR:
     return {error: payload}
   case ActionsConst.CLOSE_HEADR:
-    console.log('close')
     state.newProfiles.visible = false
     return {...state}
   default:
