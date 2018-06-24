@@ -7,6 +7,7 @@ import Slider from 'react-rangeslider'
 
 import 'react-rangeslider/lib/index.css'
 
+import {VolumeIcon} from '../../components/VolumeIcon/VolumeIcon'
 import {Favorites} from '../../components/Favorites/Favorites'
 import {DownloadDropDown} from '../../components/DownloadDropDown/DownloadDropDown'
 
@@ -35,12 +36,14 @@ const formatSecondsAsTime = (secs, format) => {
   }
 }
 
+const VOLUME_DEFAULT = 80;
+
 export class Player extends React.Component {
   state = {
     playing: false,
     duration: null,
     playedSeconds: null,
-    volume: 80
+    volume: VOLUME_DEFAULT
   }
 
   static propTypes = {
@@ -48,6 +51,8 @@ export class Player extends React.Component {
   }
 
   playPause = () => this.setState({ playing: !this.state.playing })
+
+  mute = () => this.setState({volume: this.state.volume > 0 ? 0 : VOLUME_DEFAULT })
 
   onDuration = duration => this.setState({ duration: duration })
 
@@ -75,10 +80,12 @@ export class Player extends React.Component {
             className={classnames('button', {'pause': playing, 'play': !playing})}
             onClick={() => this.playPause()}
           />
+          <VolumeIcon muteFn={this.mute} volume={volume}/>
           <Slider
             min={0} max={100}
             tooltip={false}
-            value={volume} onChange={this.handleChange}
+            value={volume}
+            onChange={this.handleChange}
           />
           <div className='current'>{formatSecondsAsTime(Math.ceil(playedSeconds))}</div>
           <div className='total'>{formatSecondsAsTime(Math.ceil(duration))}</div>
