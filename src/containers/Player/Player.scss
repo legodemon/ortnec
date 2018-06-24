@@ -6,8 +6,8 @@
   @include flex-box(column, space-between, center);
 
   &-component {
-    width: 700px;
-    height: 525px;
+    width: 700px !important;
+    height: 525px !important;
     border-radius: $borderRadius;
     background-color: black;
   }
@@ -20,7 +20,38 @@
     padding-top: 20px;
 
     .wrapper {
-      width: 390px;
+      @include flex-box(row, space-between, center);
+
+      width: 290px;
+
+      .button {
+        margin-left: 20px;
+        @include flex-box(row, center, center);
+        height: 20px;
+        width: 25px;
+        cursor: pointer;
+
+        &.play {
+          @include sprite('play')
+        }
+
+        &.pause {
+          @include sprite('pause')
+        }
+
+      }
+
+      .current {
+        @include arial-font(14px);
+        font-weight: normal;
+      }
+
+      .total {
+        @include arial-font(14px);
+        font-weight: normal;
+        opacity: .3;
+      }
+
     }
 
   }
