@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import classnames from 'classnames'
+import PropTypes from 'prop-types'
+
+import Slider from 'react-rangeslider'
+
+import 'react-rangeslider/lib/index.css'
 
 import {Favorites} from '../../components/Favorites/Favorites'
 import {DownloadDropDown} from '../../components/DownloadDropDown/DownloadDropDown'
 
 import './Player.scss'
-import PropTypes from 'prop-types'
 
 const formatSecondsAsTime = (secs, format) => {
   let hr  = Math.floor(secs / 3600)
@@ -33,9 +37,10 @@ const formatSecondsAsTime = (secs, format) => {
 
 export class Player extends React.Component {
   state = {
-    playing: true,
+    playing: false,
     duration: null,
-    playedSeconds: null
+    playedSeconds: null,
+    volume: 80
   }
 
   static propTypes = {
@@ -48,9 +53,11 @@ export class Player extends React.Component {
 
   onProgress = ({playedSeconds}) => this.setState({ playedSeconds: playedSeconds })
 
+  handleChange = value => this.setState({volume: value})
+
   render() {
     const {download, sources: [{mp4}]} = this.props.video
-    const {playing, duration, playedSeconds} = this.state
+    const {playing, duration, playedSeconds, volume} = this.state
 
     return <div className='player'>
       <ReactPlayer
@@ -60,12 +67,18 @@ export class Player extends React.Component {
         playing={playing}
         onDuration={this.onDuration}
         onProgress={this.onProgress}
+        volume={volume/100}
       />
       <div className='player-controls'>
         <div className='wrapper'>
           <div
             className={classnames('button', {'pause': playing, 'play': !playing})}
             onClick={() => this.playPause()}
+          />
+          <Slider
+            min={0} max={100}
+            tooltip={false}
+            value={volume} onChange={this.handleChange}
           />
           <div className='current'>{formatSecondsAsTime(Math.ceil(playedSeconds))}</div>
           <div className='total'>{formatSecondsAsTime(Math.ceil(duration))}</div>

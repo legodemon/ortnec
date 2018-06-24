@@ -41,6 +41,43 @@
 
       }
 
+      .rangeslider {
+        width: 70px;
+        height: 2px;
+        border-radius: 0;
+        background-color: rgba($color, 0.3);
+
+        &__handle {
+          box-shadow: none;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .& &__fill {
+          background-color: $color;
+          box-shadow: none;
+          border-radius: 0;
+        }
+      }
+
+      .rangeslider-horizontal {
+        .rangeslider__handle:after {
+          content: none;
+        }
+      }
+
+      .rangeslider-horizontal {
+        .rangeslider__handle {
+          height: 10px;
+          width: 2px;
+          border-radius: 0;
+          background-color: $color;
+        }
+      }
+
       .current {
         @include arial-font(14px);
         font-weight: normal;
