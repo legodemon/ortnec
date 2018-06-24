@@ -3,3 +3,6 @@ export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
 export const GET_DATA_ERROR = 'GET_DATA_ERROR'
 
 export const CLOSE_HEADR = 'CLOSE_HEADER'
+
+export const VIDEO_PREPARE = 'VIDEO_PREPARE'
+export const VIDEO_READY = 'VIDEO_READY'
