@@ -9,15 +9,16 @@ export class Preview extends React.Component {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     socialLink: PropTypes.object.isRequired,
-    clickFn: PropTypes.func.isRequired
+    clickFn: PropTypes.func.isRequired,
+    preview: PropTypes.string.isRequired,
   }
 
   render() {
-    const {id, title, socialLink, clickFn} = this.props
+    const {id, title, socialLink: {type, url}, clickFn, preview} = this.props
 
-    return <div className='preview' onClick={() => clickFn(id)}>
-      <div className='preview__image'/>
-      <div className={classnames('social-icon', socialLink.type)}/>
+    return <div className='preview'>
+      <div className='preview__image' onClick={() => clickFn(id)} style={{backgroundImage: `url(${preview})`}}/>
+      <a className={classnames('social-icon', type)} href={url} target={'_blank'}/>
       <div className='preview__title'>{title}</div>
     </div>
   }

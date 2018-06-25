@@ -9,19 +9,20 @@
 
   width: 220px;
 
-  cursor: pointer;
-
   &__image {
     width: 220px;
     height: 165px;
     border-radius: $borderRadius;
-    background-color: black;
+    background-color: $highColor;
+    cursor: pointer;
+    z-index: 0;
   }
 
   .social-icon {
     position: absolute;
     bottom: 50px;
     left: 20px;
+    z-index: 1;
   }
 
   &__title {

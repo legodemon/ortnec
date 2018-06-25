@@ -9,10 +9,10 @@ export class ModelInfo extends React.Component {
   }
 
   render() {
-    const {activities, age, description, name, yearStarted} = this.props.data
+    const {avatar, activities, age, description, name, yearStarted} = this.props.data
 
     return <div className='info'>
-      <div className='photo'/>
+      <div className='photo' style={{backgroundImage: `url(${avatar})`}}/>
       <div className='name'>{name}</div>
       <div className='description'>
 

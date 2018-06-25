@@ -4,6 +4,7 @@
     "checkNowUrl": "http://test.url/"
   },
   "modelInfo": {
+    "avatar": "http://i.pravatar.cc/120?img=1",
     "id": 123,
     "name": "Sandra Star",
     "yearStarted": "2017",
@@ -37,6 +38,7 @@
       "id": 1,
       "title": "Beautiful brunette Sandra Star posing to camera",
       "duration": 60,
+      "preview": "http://via.placeholder.com/220x165/f2f5ff/465993?text=video+1",
       "sources": [
         {
           "mp4": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
@@ -68,6 +70,7 @@
       "id": 2,
       "title": "Amazing blondie with tatoos want some play",
       "duration": 60,
+      "preview": "http://via.placeholder.com/220x165/f2f5ff/465993?text=video+2",
       "sources": [
         {
           "mp4": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4?2"
@@ -99,6 +102,7 @@
       "id": 3,
       "title": "Hot Sandra Star performing in front of camera",
       "duration": 60,
+      "preview": "http://via.placeholder.com/220x165/f2f5ff/465993?text=video+3",
       "sources": [
         {
           "mp4": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4?3"
@@ -125,6 +129,7 @@
       "id": 4,
       "title": "Wow! Sandra is in business again!",
       "duration": 60,
+      "preview": "http://via.placeholder.com/220x165/f2f5ff/465993?text=video+4",
       "sources": [
         {
           "mp4": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4?4"
@@ -151,6 +156,7 @@
       "id": 5,
       "title": "Red lingeries beauty wiill make you wmad",
       "duration": 60,
+      "preview": "http://via.placeholder.com/220x165/f2f5ff/465993?text=video+5",
       "sources": [
         {
           "mp4": "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4?5"

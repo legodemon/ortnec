@@ -24,8 +24,8 @@ export class Footer extends React.Component {
       </div>
 
       <div className='footer__previews'>
-        {videos.map(({title, socialLink, id}) => <Preview
-          key={`${id}-preview`} id={id} title={title} socialLink={socialLink} clickFn={clickFn}/>)}
+        {videos.map(({title, socialLink, id, preview}) => <Preview
+          key={`${id}-preview`} id={id} title={title} socialLink={socialLink} preview={preview} clickFn={clickFn}/>)}
       </div>
     </div>
   }
